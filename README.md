@@ -7,7 +7,12 @@ Follow the steps below to install and run this project.
 npm ci
 ```
 
-2. Now you are able to run the project, there are several options to run it.
+2. Install husky to avoid untested commits, with this, before each commit, git will run test, lint and build to check if the code works.
+```
+npm run prepare
+```
+
+3. Now you are able to run the project, there are several options to run it.
 
   + ```npm run start:dev```
     + This allows you to make changes to the code and see its execution in real time.
