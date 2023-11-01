@@ -2,6 +2,11 @@
 
 Follow the steps below to install and run this project.
 
+0. You can use nvm to configure NodeJS (if installed), this will change to the recommended version of NodeJS. Only works with Linux and Mac.
+```
+nvm use
+```
+
 1. Install by running npm install
 ```
 npm ci
