@@ -46,6 +46,16 @@ npm run prepare
 
 + NodeJS - v18
 
+## Results
+
+### Part 1: Fees
+
+<img width="433" alt="imagen" src="https://github.com/CodeRevenge/test-globallogic/assets/14988986/17434235-d680-40c7-ab59-195aa3001847">
+
+### Part 2: Distributions
+
+<img width="540" alt="imagen" src="https://github.com/CodeRevenge/test-globallogic/assets/14988986/d15b332a-6344-4351-90d1-b0022fe65ed3">
+
 
 # Test
 
