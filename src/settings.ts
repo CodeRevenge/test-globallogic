@@ -6,6 +6,6 @@ const settings: Settings = {
         currency: 'USD',
         locale: 'en-US'
     }
-}
+};
 
 export default settings;

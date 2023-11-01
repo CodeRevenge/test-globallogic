@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {describe, expect, it} from '@jest/globals';
 import { getOrderDistribution, removeChalkStyles } from '../utils/helpers';
 import { orderItems, orders } from '../data';

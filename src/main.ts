@@ -1,9 +1,13 @@
-// Core
+/* eslint-disable no-console */
+// Modules
 import chalk from 'chalk';
 
 // Helpers
 import { orderItems, orders } from './data';
-import { getFixedOrederItems, getOrderDistribution, removeChalkStyles } from './utils/helpers';
+import {
+    getFixedOrederItems,
+    getOrderDistribution,
+    removeChalkStyles } from './utils/helpers';
 
 // Functions
 import feesCalculator from "./functions/fees-calculator";
@@ -20,8 +24,8 @@ function main() {
     // Generating hashmap for order items (fees)
     const fixedOrderItems = getFixedOrederItems(orderItems);
 
-    const [part1resp, totals] = feesCalculator(fixedOrderItems, orders);
-    console.log(preventColor ? removeChalkStyles(part1resp) : part1resp);
+    const [p1resp, totals] = feesCalculator(fixedOrderItems, orders);
+    console.log(preventColor ? removeChalkStyles(p1resp) : p1resp);
 
     // End of Part 1
     
@@ -32,8 +36,8 @@ function main() {
     // Generating hashmap for order items (distributions)
     const orderDistribution = getOrderDistribution(orderItems);
 
-    const part2resp = distributionCalculation(orderDistribution, orders, totals);
-    console.log(preventColor ? removeChalkStyles(part2resp) : part2resp);
+    const p2resp = distributionCalculation(orderDistribution, orders, totals);
+    console.log(preventColor ? removeChalkStyles(p2resp) : p2resp);
 
     // End of Part 2
 

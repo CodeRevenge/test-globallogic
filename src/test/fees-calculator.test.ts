@@ -1,7 +1,8 @@
+/* eslint-disable indent */
 import {describe, expect, it} from '@jest/globals';
-import feesCalculator from "../functions/fees-calculator";
-import { getFixedOrederItems, removeChalkStyles } from '../utils/helpers';
 import { orderItems, orders } from '../data';
+import { getFixedOrederItems, removeChalkStyles } from '../utils/helpers';
+import feesCalculator from "../functions/fees-calculator";
 
 describe('Fees Calculator', () => {
     it('should calculate fees correctly', async () => {

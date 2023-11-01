@@ -1,3 +1,44 @@
+# How to
+
+Follow the steps below to install and run this project.
+
+1. Install by running npm install
+```
+npm ci
+```
+
+2. Now you are able to run the project, there are several options to run it.
+
+  + ```npm run start:dev```
+    + This allows you to make changes to the code and see its execution in real time.
+  + ```npm run start:dev:no-color```
+    + Same as the first, but disables the colors in the output.
+  + ```npm run build:start:```
+    + This compiles the code from Typescript to Javascript and runs it automatically. This generates the ```dist``` folder.
+  + ```npm run build:start:no-color```
+    + Like the last one, this compiles the code and runs it automatically. The output will not have colors.
+  + ```npm start```
+    + This can only be run after running ```npm run build```.
+
+### There are other scripts:
+  + ```npm test```
+    + This runs Jest tests, they should pass.
+  + ```npm run coverage```
+    + This shows the coverage of the tests.
+  + ```npm run lint```
+    + This shows the code smells with styles and try to fix them.
+  + ```npm run build```
+    + This compiles the code from Typescript to Javascript without running it. This generates the ```dist``` folder.
+
+
+
+## Technical requeriments
+
++ NodeJS - v18
+
+
+# Test
+
 Part 1: Fees
 
 The file fees.json describes fees that are applied to different types of items in an order. Each type of item in a order can have one or more fees associated with it.

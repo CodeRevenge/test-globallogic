@@ -1,17 +1,27 @@
+// Modules
 import chalk from "chalk";
+
+// Utils
+import currencyFormater from "../utils/currency-formater";
+
+// Types
 import { Distribution } from "../types/distribution.type";
 import { OrderDistribution } from "../types/order-item.type";
 import { Order } from "../types/order.type";
-import currencyFormater from "../utils/currency-formater";
 
-export default function (orderDistributions: OrderDistribution, orders: Order[], totals: { [key: string]: number }) {
+export default function (
+    orderDistributions: OrderDistribution,
+    orders: Order[],
+    totals: { [key: string]: number }) {
+
     let finalOutput = '';
     let totalOthers = 0;
 
     const globalFunds: Distribution[] = [];
 
     orders.forEach(order => {
-        finalOutput += chalk.bgGreenBright.bold('Order ID:') + chalk.bold(` ${order.order_number}\n`);
+        finalOutput += chalk.bgGreenBright.bold('Order ID:') 
+            + chalk.bold(` ${order.order_number}\n`);
 
         const orderFunds: Distribution[] = [];
 
@@ -20,7 +30,8 @@ export default function (orderDistributions: OrderDistribution, orders: Order[],
         });
 
         const groupedFounds = orderFunds.reduce((acc, fund) => {
-            acc[fund.name] = acc[fund.name] ? acc[fund.name] + fund.amount : fund.amount;
+            acc[fund.name] = acc[fund.name] ?
+                acc[fund.name] + fund.amount : fund.amount;
             return acc;
         }, {} as { [key: string]: number });
 
@@ -28,11 +39,13 @@ export default function (orderDistributions: OrderDistribution, orders: Order[],
         let totalAmountFunds = 0;
 
         Object.entries(groupedFounds).forEach(([fundName, amount]) => {
-            finalOutput += `   Fund - ${chalk.italic(fundName)}: ${currencyFormater(amount)}\n`;
+            finalOutput += `   Fund - ${chalk.italic(fundName)
+            }: ${currencyFormater(amount)}\n`;
             totalAmountFunds += amount;
         });
 
-        finalOutput += `   Fund - ${chalk.italic('Other')}: ${currencyFormater(totals[order.order_number] - totalAmountFunds)}\n`;
+        finalOutput += `   Fund - ${chalk.italic('Other')}: ${currencyFormater(
+            totals[order.order_number] - totalAmountFunds)}\n`;
         totalOthers += totals[order.order_number] - totalAmountFunds;
 
         finalOutput += '\n';
@@ -41,7 +54,8 @@ export default function (orderDistributions: OrderDistribution, orders: Order[],
     });
 
     const groupedFounds = globalFunds.reduce((acc, fund) => {
-        acc[fund.name] = acc[fund.name] ? acc[fund.name] + fund.amount : fund.amount;
+        acc[fund.name] = acc[fund.name] ? 
+            acc[fund.name] + fund.amount : fund.amount;
         return acc;
     }, {} as { [key: string]: number });
 
